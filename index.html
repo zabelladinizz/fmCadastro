@@ -1,63 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de cadastro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
 </head>
 <body>
-<form class="needs-validation" novalidate>
+   <form class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Seu nome</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Seu nome" value="Isabella" required>
-      <div class="valid-tooltip">
-        Os melhores estão no DS1A!
+      <label for="validationCustom01">Nome:</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="Seu nome" value="Isabella" required>
+      <div class="valid-feedback">
+        Continue!
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Seu sobrenome</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Sobrenome" value="Diniz" required>
-      <div class="valid-tooltip">
+      <label for="validationCustom02">Sobrenome:</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value="Diniz" required>
+      <div class="valid-feedback">
+        Continue!
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Nome de usuário</label>
+      <label for="validationCustomUsername">Nome de usuário:</label>
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
         </div>
-        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Nome de usuário" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Por favor insira um nome de usuário válido 
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Nome de usuário" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Por favor escolha um nome de usuário
         </div>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationTooltip03">Cidade</label>
-      <input type="text" class="form-control" id="validationTooltip03" placeholder="cidade" required>
-      <div class="invalid-tooltip">
-        Por favor insira uma Cidade válido
+      <label for="validationCustom03">Cidade:</label>
+      <input type="text" class="form-control" id="validationCustom03" placeholder="Cidade" required>
+      <div class="invalid-feedback">
+        Coloque uma cidade válida.
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">Estado</label>
-      <input type="text" class="form-control" id="validationTooltip04" placeholder="Estado" required>
-      <div class="invalid-tooltip">
-        Por favor insira um estado válidO.
+      <label for="validationCustom04">Estado:</label>
+      <input type="text" class="form-control" id="validationCustom04" placeholder="Estado" required>
+      <div class="invalid-feedback">
+        Coloque um estado válido.
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationTooltip05">CEP</label>
-      <input type="text" class="form-control" id="validationTooltip05" placeholder="CEP" required>
-      <div class="invalid-tooltip">
-        Por favor insira um CEP válido.
+      <label for="validationCustom05">CEP</label>
+      <input type="text" class="form-control" id="validationCustom05" placeholder="CEP" required>
+      <div class="invalid-feedback">
+        Coloque um CEP válido.
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Enviar</button>
 </form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script> 
 </body>
 </html>
